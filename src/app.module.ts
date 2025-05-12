@@ -11,10 +11,10 @@ import { UsuarioModule } from './modules/usuario.module';
       username: 'root',
       password: '1234',
       database: 'cleito',
-      entities: [PersonModule],
+      entities: [UsuarioModule],
       synchronize: true,
     }),
-    PersonModule,
+    UsuarioModule,
   ],
 })
 export class AppModule {}

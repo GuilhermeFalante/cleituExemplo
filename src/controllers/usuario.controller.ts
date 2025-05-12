@@ -11,8 +11,8 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UsuarioModel } from 'src/models/usuario.model';
-import { UsuarioSchema } from 'src/schemas/usuario.schema';
+import { UsuarioModel } from '../models/usuario.model';
+import { UsuarioSchema } from '../schemas/usuario.schema';
 
 @Controller('/usuario')
 export class UsuarioController {

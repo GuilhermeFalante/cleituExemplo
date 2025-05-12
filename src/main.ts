@@ -10,7 +10,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new TransformInterceptor());
 
-  await app.listen(8080);
+  await app.listen(3306);
 }
 
 bootstrap();

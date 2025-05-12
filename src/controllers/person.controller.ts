@@ -11,8 +11,8 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PersonModel } from 'src/models/person.model';
-import { PersonSchema } from 'src/schemas/person.schema';
+import { PersonModel } from '../models/person.model';
+import { PersonSchema } from '../schemas/person.schema';
 
 @Controller('/person')
 export class PersonController {

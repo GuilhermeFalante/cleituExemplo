@@ -3,11 +3,11 @@ import { IsString, IsInt, Min, MaxLength, IsEmail } from 'class-validator';
 export class UsuarioSchema {
   @IsString()
   @MaxLength(120)
-  name: string;
+  nome: string;
 
   @IsInt()
   @Min(1)
-  age: number;
+  idade: number;
 
   @IsString()
   @IsEmail()

@@ -6,10 +6,10 @@ export class UsuarioModel {
   id: number;
 
   @Column({ length: 120 })
-  name: string;
+  nome: string;
 
   @Column('int')
-  age: number;
+  idade: number;
 
   @Column({ length: 255 })
   email: string;

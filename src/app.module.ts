@@ -10,7 +10,7 @@ import { UsuarioModel } from './models/usuario.model';
       host: 'localhost',
       port: 8080, 
       username: 'root',
-      password: '1234',
+      password: 'root',
       database: 'cleito',
       entities: [UsuarioModel], 
       synchronize: true, 

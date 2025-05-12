@@ -8,3 +8,4 @@ import { PersonModel } from '../models/person.model';
   controllers: [PersonController],
 })
 export class PersonModule {}
+

@@ -11,46 +11,46 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PersonModel } from '../models/person.model';
-import { PersonSchema } from '../schemas/person.schema';
+import { UsuarioModel } from 'src/models/usuario.model';
+import { UsuarioSchema } from 'src/schemas/usuario.schema';
 
-@Controller('/person')
-export class PersonController {
+@Controller('/usuario')
+export class UsuarioController {
   constructor(
-    @InjectRepository(PersonModel) private model: Repository<PersonModel>,
+    @InjectRepository(UsuarioModel) private model: Repository<UsuarioModel>,
   ) {}
 
   @Post()
-  public async create(@Body() body: PersonSchema): Promise<PersonModel> {
+  public async create(@Body() body: UsuarioSchema): Promise<UsuarioModel> {
     return this.model.save(body);
   }
 
   @Get(':id')
   public async getOne(
     @Param('id', ParseIntPipe) id: number,
-  ): Promise<PersonModel> {
-    const person = await this.model.findOne({ where: { id } });
+  ): Promise<UsuarioModel> {
+    const usuario = await this.model.findOne({ where: { id } });
 
-    if (!person) {
+    if (!usuario) {
       throw new NotFoundException(`Não achei uma pessoa com o id ${id}`);
     }
 
-    return person;
+    return usuario;
   }
 
   @Get()
-  public async getAll(): Promise<PersonModel[]> {
+  public async getAll(): Promise<UsuarioModel[]> {
     return this.model.find();
   }
 
   @Put(':id')
   public async update(
     @Param('id', ParseIntPipe) id: number,
-    @Body() body: PersonSchema,
-  ): Promise<PersonModel> {
-    const person = await this.model.findOne({ where: { id } });
+    @Body() body: UsuarioSchema,
+  ): Promise<UsuarioModel> {
+    const usuario = await this.model.findOne({ where: { id } });
 
-    if (!person) {
+    if (!usuario) {
       throw new NotFoundException(`Não achei uma pessoa com o id ${id}`);
     }
 
@@ -61,9 +61,9 @@ export class PersonController {
 
   @Delete(':id')
   public async delete(@Param('id', ParseIntPipe) id: number): Promise<string> {
-    const person = await this.model.findOne({ where: { id } });
+    const usuario = await this.model.findOne({ where: { id } });
 
-    if (!person) {
+    if (!usuario) {
       throw new NotFoundException(`Não achei uma pessoa com o id ${id}`);
     }
 

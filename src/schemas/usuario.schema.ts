@@ -1,6 +1,6 @@
 import { IsString, IsInt, Min, MaxLength, IsEmail } from 'class-validator';
 
-export class PersonSchema {
+export class UsuarioSchema {
   @IsString()
   @MaxLength(120)
   name: string;

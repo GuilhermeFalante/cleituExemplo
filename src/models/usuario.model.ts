@@ -10,7 +10,7 @@ export class UsuarioModel {
 
   @Column('int')
   idade: number;
-
+  
   @Column({ length: 255 })
   email: string;
 }

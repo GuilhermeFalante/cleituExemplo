@@ -8,7 +8,7 @@ export class UsuarioSchema {
   @IsInt()
   @Min(1)
   idade: number;
-
+  
   @IsString()
   @IsEmail()
   @MaxLength(255)
